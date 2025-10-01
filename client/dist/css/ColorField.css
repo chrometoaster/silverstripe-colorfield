@@ -1,53 +1,152 @@
+/**
+ * ColorField CSS Styles
+ * 
+ * This stylesheet provides comprehensive styling for the ColorField form field,
+ * including layout, spacing, visual effects, and responsive design.
+ * 
+ * Key Features:
+ * - Advanced field layout with reordered elements
+ * - Visual color preview with transparency support
+ * - Responsive design for different screen sizes
+ * - Input field styling and validation states
+ * - JQuery Minicolors integration styling
+ * 
+ * Layout Structure:
+ * 1. Advanced fields (HEX, RGB, Alpha) - positioned first
+ * 2. Color preview swatch - positioned between fields and main input
+ * 3. Main color input field - positioned last as reference
+ * 
+ * @package Chrometoaster\ColorField
+ * @author Chrometoaster
+ * @since 1.0.0
+ */
+
+/* Main color field container */
 .field.color {
   min-width: 810px; }
 
+/* JQuery Minicolors plugin styling */
 .minicolors {
   float: left;
   margin: 0 20px 20px 0; }
 
-.colorField, .colorFieldProxy {
+/* Hidden proxy field for form submission */
+.colorFieldProxy {
   display: none; }
 
+/* Main color input field - positioned last as reference */
+.field.color input[type="text"].colorField {
+  margin-top: 20px;
+  clear: both;
+  display: block;
+  width: 100%;
+  max-width: 400px; }
+
+/* Color preview swatch - visual representation of selected color */
 .colorFieldPreview {
   float: left;
   width: 154px;
   height: 154px;
   overflow: hidden;
-  margin: 0 20px 20px 0;
-  background-color: #fff;
+  margin: 5px 20px 20px 20px;  /* Reduced top margin for better alignment */
+  padding: 5px;                 /* Internal padding for color display */
+  background-color: #fff;       /* White background for contrast */
+  /* Checkerboard pattern for transparency visualization */
   background-image: linear-gradient(45deg, #eee 25%, transparent 25%), linear-gradient(-45deg, #eee 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #eee 75%), linear-gradient(-45deg, transparent 75%, #eee 75%);
-  background-size: 10px 10px;
-  border-radius: 5px; }
+  background-size: 10px 10px;   /* Checkerboard square size */
+  border: 1px solid #ddd;       /* Subtle border for definition */
+  border-radius: 5px; }         /* Rounded corners for modern look */
+  
+  /* Inner color display element */
   .colorFieldPreview .color {
     float: left;
     width: 100%;
     height: 100%; }
 
+/* Advanced fields container - HEX, RGB, Alpha inputs */
 .colorFieldControls {
   float: left;
   width: 236px;
-  /*154px;*/
-  margin-top: 0; }
+  /*154px;*/                    /* Original width - kept for reference */
+  margin-top: 10px !important;  /* Reduced top margin for better alignment */
+  margin-right: 20px;           /* Space between fields and color swatch */
+  margin-bottom: 0;
+  margin-left: 0; }
+  /* Label styling for advanced fields */
   .colorFieldControls label.left {
     width: auto; }
+    
+  /* Mode selector styling */
   .colorFieldControls .mode {
     float: left;
     width: 100%;
     margin-bottom: 6px; }
+    
+  /* HEX and Alpha field containers */
   .colorFieldControls .hex, .colorFieldControls .alpha {
     float: left;
     width: 100%; }
+    
+    /* HEX and Alpha input field styling */
     .colorFieldControls .hex input, .colorFieldControls .alpha input {
       float: right;
       width: 180px; }
-  .colorFieldControls .rgb {
-    float: left;
-    width: 100%;
-    margin: 10px 0 10px 0; }
+/* RGB fields container - Red, Green, Blue inputs */
+.colorFieldControls .rgb {
+  float: left;
+  width: 100%;
+  margin: 10px 0 10px 0;
+  display: flex;                /* Flexbox for horizontal alignment */
+  flex-direction: row;
+  align-items: center;
+  gap: 8px; }                   /* Space between RGB inputs */
+    
+    /* Individual RGB input field styling */
     .colorFieldControls .rgb input {
       float: left;
       width: 55px; }
+      
+      /* Spacing between R and G inputs */
       .colorFieldControls .rgb input.r, .colorFieldControls .rgb input.g {
         margin-right: 10px; }
 
+/* RGB field labels */
+.colorFieldControls .rgb label.left {
+  margin-right: 4px;
+  font-size: 12px;
+}
+
+/* Read-only display fields styling - when advanced fields are disabled */
+.colorFieldControls .hex-display,
+.colorFieldControls .red-display,
+.colorFieldControls .green-display,
+.colorFieldControls .blue-display,
+.colorFieldControls .alpha-display {
+  background-color: #f8f9fa;   /* Light gray background */
+  border: 1px solid #dee2e6;   /* Subtle border */
+  color: #6c757d;              /* Muted text color */
+  font-family: monospace;      /* Monospace font for values */
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 3px; }
+
+/* HEX display field specific styling */
+.colorFieldControls .hex-display {
+  width: 80px;
+  text-align: center; }
+
+/* RGB display fields specific styling */
+.colorFieldControls .red-display,
+.colorFieldControls .green-display,
+.colorFieldControls .blue-display {
+  width: 50px;
+  text-align: center;
+  margin-right: 8px; }
+
+/* Alpha display field specific styling */
+.colorFieldControls .alpha-display {
+  width: 60px;
+  text-align: center; }
+
+/* Source map reference for development */
 /*# sourceMappingURL=ColorField.css.map */
