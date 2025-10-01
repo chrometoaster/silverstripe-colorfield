@@ -221,18 +221,18 @@ class ColorField extends FormField
         Requirements::javascript('silverstripe/admin:thirdparty/jquery-entwine/dist/jquery.entwine-dist.js');
 
         // Load JQuery Minicolors plugin
-        Requirements::javascript(COLORFIELD . '/client/dist/thirdparty/jquery-minicolors/jquery.minicolors.js');
-        Requirements::css(COLORFIELD . '/client/dist/thirdparty/jquery-minicolors/jquery.minicolors.css');
+        Requirements::javascript('colymba/colorfield:client/dist/thirdparty/jquery-minicolors/jquery.minicolors.js');
+        Requirements::css('colymba/colorfield:client/dist/thirdparty/jquery-minicolors/jquery.minicolors.css');
 
         // Load custom ColorField JavaScript and CSS
-        Requirements::javascript(COLORFIELD . '/client/dist/js/ColorField.js');
-        Requirements::css(COLORFIELD . '/client/dist/css/ColorField.css');
+        Requirements::javascript('colymba/colorfield:client/dist/js/ColorField.js');
+        Requirements::css('colymba/colorfield:client/dist/css/ColorField.css');
 
         // Merge JavaScript configuration with overrides
         $jsConfig = array_merge($this->jsConfig, $this->jsConfigOverrides);
         
         // Create DBColor field instance and extract color components
-        $color = DBField::create_field('Chrometoaster\ColorField\DBColor', $this->Value(), 'Color');
+        $color = DBField::create_field('Colymba\ColorField\DBColor', $this->Value(), 'Color');
         $id = $this->ID();
         $hex = $color->Hex();
         $red = $color->R();
