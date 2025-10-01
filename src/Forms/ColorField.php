@@ -101,6 +101,19 @@ class ColorField extends FormField
     protected $mainFieldReadonly = false;
 
     /**
+     * Whether to show the main 9-character color field
+     * 
+     * When false, the main field is visually hidden but still present
+     * in the DOM for form submission. This prevents confusion for CMS users
+     * who only need the advanced fields (HEX, RGB, Alpha).
+     * 
+     * When true, the field is visible for debugging or verification purposes.
+     * 
+     * @var bool
+     */
+    protected $showMainField = false;
+
+    /**
      * Return a new ColorField.
      *
      * @param string $name     Field's name
@@ -144,6 +157,24 @@ class ColorField extends FormField
     public function setMainFieldReadonly($readonly = true)
     {
         $this->mainFieldReadonly = $readonly;
+        return $this;
+    }
+
+    /**
+     * Set whether to show the main 9-character color field
+     * 
+     * Controls the visibility of the main color field. When false, the field
+     * is hidden via CSS but remains functional for form submission. This is
+     * useful for cleaner UX when users only need the advanced fields.
+     * 
+     * When true, the field is visible for debugging or verification.
+     * 
+     * @param bool $show Whether to show the main field
+     * @return $this Fluent interface
+     */
+    public function setShowMainField($show = true)
+    {
+        $this->showMainField = $show;
         return $this;
     }
 
@@ -253,6 +284,7 @@ class ColorField extends FormField
             // Template options
             'Options' => [
                 'Alpha' => $this->jsConfig['opacity'],
+                'ShowMainField' => $this->showMainField,
             ],
             
             // Current color values for display
