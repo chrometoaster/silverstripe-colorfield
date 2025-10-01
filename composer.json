@@ -9,7 +9,7 @@
 		"email": "thierry@colymba.com"
 	}],
 	"require": {
-		"php": ">=5.6.0",
+		"php": "^7.1 || ^8.0",
 		"silverstripe/framework": "^4.0",
 		"abeautifulsite/jquery-minicolors": "^2.0"
 	},
@@ -20,7 +20,7 @@
 	},
 	"extra": {
 		"branch-alias": {
-			"dev-master": "2.0.x-dev"
+			"dev-ss4": "2.0.x-dev"
 		},
 		"expose": [
 			"client/dist"
