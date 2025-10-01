@@ -114,11 +114,11 @@ to ensure reliability across different scenarios including AJAX form updates.
     var containers = document.querySelectorAll('.colorFieldControls');
     
     containers.forEach(function(container) {
-      var hexInput = container.querySelector('.hex input');
+      var hexInput = container.querySelector('.hex input, .hex-display');
       var redInput = container.querySelector('.red-display');
       var greenInput = container.querySelector('.green-display');
       var blueInput = container.querySelector('.blue-display');
-      var alphaInput = container.querySelector('.alpha input');
+      var alphaInput = container.querySelector('.alpha input, .alpha-display');
       var mainField = container.closest('.field.color').querySelector('.colorField');
       var proxyField = container.closest('.field.color').querySelector('.colorFieldProxy');
       var colorPreview = container.closest('.field.color').querySelector('.colorFieldPreview .color');
@@ -547,7 +547,7 @@ to ensure reliability across different scenarios including AJAX form updates.
     var hasUninitialized = false;
     
     containers.forEach(function(container) {
-      var hexInput = container.querySelector('.hex input');
+      var hexInput = container.querySelector('.hex input, .hex-display');
       if (hexInput && !hexInput.hasAttribute('data-color-sync-initialized')) {
         hasUninitialized = true;
       }
