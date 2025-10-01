@@ -147,17 +147,17 @@
        * Supported events: input, change, keyup, focusout
        * This ensures synchronization happens on typing, pasting, and field changes.
        */
-      $(document).on('input change keyup focusout', '.colorFieldControls .hex input, .colorFieldControls .red-display, .colorFieldControls .green-display, .colorFieldControls .blue-display, .colorFieldControls .alpha input', function(e) {
+      $(document).on('input change keyup focusout', '.colorFieldControls .hex input, .colorFieldControls .hex-display, .colorFieldControls .red-display, .colorFieldControls .green-display, .colorFieldControls .blue-display, .colorFieldControls .alpha input, .colorFieldControls .alpha-display', function(e) {
         // Get references to all color-related elements
         var $field = $(this);
         var $parent = $field.closest('.field.color');
         var $proxy = $parent.find('.colorFieldProxy');
         var $mainField = $parent.find('.colorField');
-        var $hex = $parent.find('.colorFieldControls .hex input');
+        var $hex = $parent.find('.colorFieldControls .hex input, .colorFieldControls .hex-display');
         var $r = $parent.find('.colorFieldControls .red-display');
         var $g = $parent.find('.colorFieldControls .green-display');
         var $b = $parent.find('.colorFieldControls .blue-display');
-        var $alpha = $parent.find('.colorFieldControls .alpha input');
+        var $alpha = $parent.find('.colorFieldControls .alpha input, .colorFieldControls .alpha-display');
         
         // Determine field type from the field name
         var type = $field.attr('name').split('_').pop();
@@ -224,7 +224,7 @@
         }
       });
 
-      $('.colorFieldControls .hex input, .colorFieldControls .red-display, .colorFieldControls .green-display, .colorFieldControls .blue-display, .colorFieldControls .alpha input').entwine({
+      $('.colorFieldControls .hex input, .colorFieldControls .hex-display, .colorFieldControls .red-display, .colorFieldControls .green-display, .colorFieldControls .blue-display, .colorFieldControls .alpha input, .colorFieldControls .alpha-display').entwine({
         onmatch: function(){},
         onunmatch: function(){},
 
