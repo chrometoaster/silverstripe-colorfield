@@ -182,15 +182,24 @@ class ColorField extends FormField
      * Returns the field's HTML attributes
      * 
      * Generates HTML attributes for the main color input field, including
-     * the readonly attribute when the main field is configured as read-only.
+     * the readonly attribute when the main field is configured as read-only
+     * and the hidden class when the field should be visually hidden.
      * 
      * @return array HTML attributes for the input field
      */
     public function getAttributes()
     {
+        // Build class list
+        $classes = ['text', 'colorField'];
+        
+        // Add hidden class if main field should not be shown
+        if (!$this->showMainField) {
+            $classes[] = 'colorField--hidden';
+        }
+
         $attributes = [
             'size' => $this->maxLength,
-            'class' => 'text colorField',
+            'class' => implode(' ', $classes),
         ];
 
         // Add readonly attribute if main field is configured as read-only

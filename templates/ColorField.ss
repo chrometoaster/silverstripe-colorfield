@@ -64,8 +64,8 @@ Template Variables:
 </div>
 
 <%-- Main color input field - positioned last as reference/cross-check --%>
-<%-- Hidden by default unless ShowMainField option is enabled --%>
-<input $AttributesHTML data-config="$JSConfig" class="text colorField<% if not $Options.ShowMainField %> colorField--hidden<% end_if %>" />
+<%-- Hidden by default unless ShowMainField option is enabled (class added in PHP) --%>
+<input $AttributesHTML data-config="$JSConfig" />
 
 <%-- Hidden proxy field for JQuery Minicolors integration --%>
 $Controls.Proxy
