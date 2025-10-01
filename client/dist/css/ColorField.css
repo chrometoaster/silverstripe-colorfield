@@ -34,6 +34,10 @@
 .colorFieldProxy {
   display: none; }
 
+/* Hide Minicolors swatch when using advanced fields */
+.field.color .minicolors {
+  display: none; }
+
 /* Main color input field - positioned last as reference */
 .field.color input[type="text"].colorField {
   margin-top: 20px;
