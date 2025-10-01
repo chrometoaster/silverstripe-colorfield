@@ -290,6 +290,11 @@ class ColorField extends FormField
                 'AlphaDisplay' => TextField::create($id.'_alpha_display', 'Alpha', $alpha, 5)
                     ->setReadonly(!$this->advancedFieldsEditable)
                     ->addExtraClass($this->advancedFieldsEditable ? 'alpha-display' : 'no-change-track alpha-display'),
+
+                // Hidden proxy field for JQuery Minicolors color picker
+                'Proxy' => HiddenField::create($id.'_proxy', '', '#'.$hex)
+                    ->addExtraClass('colorFieldProxy')
+                    ->setAttribute('data-opacity', $alpha),
             ],
             // Note: HSV fields are commented out as they're not currently used
             // but could be added for additional color space support
