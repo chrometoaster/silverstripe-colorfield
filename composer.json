@@ -10,7 +10,7 @@
 	}],
 	"require": {
 		"php": "^7.1 || ^8.0",
-		"silverstripe/framework": "^4.0",
+		"silverstripe/framework": "^4.0 || ^5.0",
 		"abeautifulsite/jquery-minicolors": "^2.0"
 	},
 	"autoload": {
