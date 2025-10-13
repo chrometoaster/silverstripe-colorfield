@@ -1,5 +1,6 @@
-<input $AttributesHTML data-config="$JSConfig" />
+<input $AttributesHTML />
 $Controls.Proxy
+<div class="pickr-container"></div>
 <div class="colorFieldPreview">
   <div class="color" style="background-color:#{$Color.Hex};opacity:$Color.A;"></div>
 </div>

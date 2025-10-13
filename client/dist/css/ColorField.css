@@ -1,0 +1,124 @@
+/**
+ * ColorField CSS for SilverStripe CMS 5.4+
+ * Styles for Pickr color picker integration
+ */
+
+.field.color {
+  min-width: 810px;
+  overflow: hidden;
+}
+
+.pickr-container {
+  float: left;
+  margin: 0 20px 20px 0;
+}
+
+.colorField,
+.colorFieldProxy {
+  display: none;
+}
+
+.colorFieldPreview {
+  float: left;
+  width: 154px;
+  height: 154px;
+  overflow: hidden;
+  margin: 0 20px 20px 0;
+  background-color: #fff;
+  /* Checkered transparency background pattern */
+  background-image: 
+    linear-gradient(45deg, #eee 25%, transparent 25%), 
+    linear-gradient(-45deg, #eee 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #eee 75%),
+    linear-gradient(-45deg, transparent 75%, #eee 75%);
+  background-size: 10px 10px;
+  background-position: 0 0, 0 5px, 5px -5px, -5px 0px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.colorFieldPreview .color {
+  float: left;
+  width: 100%;
+  height: 100%;
+}
+
+.colorFieldControls {
+  float: left;
+  width: 236px;
+  margin-top: 0;
+}
+
+.colorFieldControls label.left {
+  width: auto;
+  font-weight: normal;
+  margin-right: 8px;
+}
+
+.colorFieldControls .mode {
+  float: left;
+  width: 100%;
+  margin-bottom: 6px;
+}
+
+.colorFieldControls .hex,
+.colorFieldControls .alpha {
+  float: left;
+  width: 100%;
+  margin-bottom: 6px;
+}
+
+.colorFieldControls .hex input,
+.colorFieldControls .alpha input {
+  float: right;
+  width: 180px;
+}
+
+.colorFieldControls .rgb {
+  float: left;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.colorFieldControls .rgb input {
+  float: left;
+  width: 55px;
+}
+
+.colorFieldControls .rgb input.r,
+.colorFieldControls .rgb input.g {
+  margin-right: 10px;
+}
+
+/* Pickr-specific overrides for nano theme */
+.pcr-app[data-theme="nano"] {
+  width: 154px;
+}
+
+.pcr-app[data-theme="nano"] .pcr-swatches {
+  margin-top: 8px;
+}
+
+.pcr-app[data-theme="nano"] .pcr-swatches > button {
+  width: 20px;
+  height: 20px;
+  margin: 2px;
+}
+
+/* Ensure Pickr integrates well with SilverStripe CMS */
+.pcr-app {
+  box-shadow: none;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.pcr-app .pcr-palette,
+.pcr-app .pcr-slider {
+  border-radius: 3px;
+}
+
+/* Mode dropdown styling */
+.colorMode select {
+  width: 100%;
+}
+

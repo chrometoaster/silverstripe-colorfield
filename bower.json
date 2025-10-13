@@ -1,7 +1,0 @@
-{
-  "name": "ss-minicolors-field",
-  "version": "1.0.0",
-  "dependencies": {
-    "jquery-minicolors": "~2.1.7"
-  }
-}

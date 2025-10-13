@@ -1,19 +1,33 @@
 {
-  "name": "colymba/silverstripe-colorfield",
-  "type": "silverstripe-module",
-  "description": "SilverStripe 3 Color picker and DBField field with attitude.",
-  "keywords": ["silverstripe", "color", "colour", "color picker", "colour field", "DBField"],
-  "license": "BSD Simplified",
-  "authors": [{
-    "name": "Thierry Francois",
-    "email": "thierry@colymba.com"
-  }],
-  "require": {
-    "silverstripe/framework": "^3.1"
-  },
-  "repositories": [{
-    "type": "vcs",
-    "url": "git@github.com:colymba/silverstripe-colorfield.git"
-  }],
-  "minimum-stability": "dev"
+	"name": "colymba/colorfield",
+	"type": "silverstripe-vendormodule",
+	"description": "SilverStripe 5 Color picker and DBField field with attitude.",
+	"keywords": ["silverstripe", "silverstripe 5", "color", "colour", "color picker", "colour field", "DBField"],
+	"license": "BSD-3-Clause",
+	"authors": [{
+		"name": "Thierry Francois",
+		"email": "thierry@colymba.com"
+	}, {
+		"name": "Chrometoaster",
+		"email": "hello@chrometoaster.com"
+	}],
+	"require": {
+		"php": "^8.1",
+		"silverstripe/framework": "^5.4"
+	},
+	"autoload": {
+		"psr-4": {
+			"Colymba\\ColorField\\": "src/"
+		}
+	},
+	"extra": {
+		"branch-alias": {
+			"dev-master": "3.0.x-dev"
+		},
+		"expose": [
+			"client/dist"
+		]
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true
 }
